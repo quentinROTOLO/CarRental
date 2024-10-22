@@ -1,0 +1,20 @@
+<ng-container *ngFor="let detail of car">
+    <div class="row">
+        <h2 class="text-center">{{detail.model}}</h2>
+        <div class="col-lg-7">
+            <div class="text-center">
+                <img [src]="detail.urlImg" class="img-fluid" alt="Image du véhicule choisi">
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="text-center">
+                <b>{{ detail.kmPrice }} €/km</b> parcourus <br/><br>
+                <b>{{ detail.rentalPrice }} €/jour</b> de location <br/><br>
+                <div class="bottom">
+                    <a class="btn btn-primary" (click)="reserveConnectionVerification()">Réserver ce véhicule</a>
+                    <a [routerLink]="['/addCar/', detail.licencePlate]" class="btn btn-danger">Modifier le véhicule</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

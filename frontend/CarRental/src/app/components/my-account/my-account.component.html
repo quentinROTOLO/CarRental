@@ -1,0 +1,17 @@
+<div *ngIf="!customerService.getIsUserDisconnected()">
+    <h2> Mes données personnelles </h2>
+    <div style="text-align: center">
+        <ul>
+            <li> Firstname: {{ customer.firstname }} </li>
+            <li> Name: {{customer.name}} </li>
+            <li> BirthDate: {{ customer.birth }} </li>
+            <li> BirthDate: {{ customer.birth }} </li>
+            <li> DrivingLicenseDate: {{customer.drivingLicenceGetting}} </li>
+        </ul>
+    </div>
+</div>
+
+<div *ngIf="customerService.getIsUserDisconnected()">
+    <p> Vos données ne s'affichent pas puisque vous n'êtes pas connecté!! </p>
+    <p> Connectez-vous avec votre compte personnel pour y accéder </p>
+</div>

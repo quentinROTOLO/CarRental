@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-lg-2">
+        <select class="form-select" (change)="filterBrand(brand.value)" id="brand" #brand title="filter brand">
+            <option selected>Marque</option>
+            <option *ngFor="let brand of brands">{{brand}}</option>
+        </select>
+    </div>
+    <div class="col-lg-2">
+        <select class="form-select" (change)="filterColor(color.value)" id="color" #color title="filter color">
+            <option selected>Couleur</option>
+            <option *ngFor="let color of colors">{{color}}</option>
+        </select>
+    </div>
+    <div class="col-lg-2 offset-lg-2">
+        <a class="btn btn-primary" [routerLink]="['/addCar/', '']">Ajouter une nouvelle voiture</a>
+    </div>
+    <div class="col-lg-2 offset-lg-2">
+        <button (click)="resetFilters()" class="btn btn-primary">Réinitialiser les filtres</button>
+    </div>
+</div><br>
+<div class="row mb-3">
+    <div class="col-md-4 d-flex justify-content-center flex-column align-items-center mb-5 border  bg-image hover-overlay ripple shadow-1-strong rounded" *ngFor="let info of carDetails">
+        <a [routerLink]="['/watchcar/', info.licencePlate]"><img [src]="info.urlImg" class="img-fluid " width="200px" height="auto" alt="car image"></a>
+        <ul class="text-center">
+            <li> {{ info.model }} </li>
+            <li> {{ info.kmPrice }} €/km parcourus </li>
+            <li> {{ info.rentalPrice }} €/jour </li>
+        </ul>
+    </div>
+</div>

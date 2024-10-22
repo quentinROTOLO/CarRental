@@ -1,0 +1,7 @@
+<div class="col-md-12 mb-5 d-flex text-center justify-content-evenly flex-row align-items-center">
+    <a routerLink="/locations" class="btn btn-dark"> Trouver mon véhicule idéal </a>
+    <a routerLink="/contact" class="btn btn-dark"> Nous contacter </a>
+    <a *ngIf="!isUserConnected()" routerLink="/connection" class="btn btn-dark"> Connexion </a>
+    <a *ngIf="isUserConnected()" routerLink="/myAccount" class="btn btn-dark"> Mon compte </a>
+    <a *ngIf="isUserConnected()" class="btn btn-dark" (click)="userLogout()"> Déconnexion </a>
+</div>

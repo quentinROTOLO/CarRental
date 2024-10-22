@@ -1,0 +1,14 @@
+.button { 
+    border-radius: 1%;
+    background-color: cornsilk;
+}
+
+.buttonLine { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.boutonContainer {
+    border: solid burlywood; 
+}

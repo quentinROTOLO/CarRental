@@ -1,0 +1,31 @@
+<h1 style="text-align:center">
+    Page de connection à votre compte
+</h1>
+<div class="login" style="text-align:center">
+    <h2 class="login-header"> Connection </h2>
+    <form [formGroup]="authForm" class="login-container" (ngSubmit)="signIn()">
+        <p [ngClass]="{ 'has-error': isSubmited && formControls['Login'].errors }">
+            <input type="login" placeholder="Login" formControlName="login" id="login">
+        </p>
+        <div *ngIf="isSubmited && formControls['login'].errors" class="help-block">
+            <div *ngIf="formControls['login'].errors['required']">Votre login est requis</div>
+        </div>
+        <p [ngClass]="{ 'has-error': isSubmited && formControls['password'].errors }">
+            <input type="password" placeholder="Password" formControlName="password" id="password">
+        </p>
+        <div *ngIf="isSubmited && formControls['password'].errors" class="help-block">
+            <div *ngIf="formControls['password'].errors['required']">Le mot de passe est requis</div>
+        </div>
+        <p>
+            <button type="button" value="Log in" (click)="submitForm()"> Connection </button>
+        </p>
+    </form>
+    <div *ngIf="formError">
+        <h2> La connection n'a pu être établie </h2>
+    </div>
+</div>
+
+<div *ngIf="customerService.isUserDisconnected" style="text-align:center"> 
+    <p> Vous avez été déconnecté !! </p> 
+    <button routerLink="/locations">Retour</button>
+</div>

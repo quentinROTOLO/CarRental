@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Nous Contacter</title>
+</head>
+
+<body>
+    <h2>Nous Contacter</h2>
+    <div class="row justify-content-md-center">
+        <div class="col-10">
+            <form>
+                <div class="form-group">
+                    <label for="email" class="form-label">Votre adresse e-mail :</label>
+                    <input type="text" placeholder="email address" name="email" class="form-control" #email required>
+                </div><br />
+                <div class="form-group">
+                    <label for="message" class="form-label">Votre message :</label>
+                    <textarea name="message" class="form-control" rows="6" placeholder="Message" #message required></textarea>
+                </div><br />
+
+                <button type="submit" class="btn btn-primary" (click)="AfficherMessage(message.value, email.value)" >Envoyer le message</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
